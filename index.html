@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Felipa&display=swap" rel="stylesheet">
+<title>Before I Knew You</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #6d4c7d, #b2738f);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* SECTION STYLE */
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* IMAGE STYLE */
+.photo {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.screenshot {
+    height: 500px;
+    width: 225px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* TEXT */
+.text {
+    font-size: 1.3rem;
+    max-width: 500px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* TITLE */
+.title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* LIFE TEXT BLOCK */
+.life {
+    font-size: 1.1rem;
+    max-width: 600px;
+    line-height: 1.8;
+    opacity: 0.85;
+}
+
+/* ENDING */
+.ending {
+    font-size: 1.6rem;
+    font-style: italic;
+    opacity: 0.95;
+    font-family: 'Felipa', sans-serif;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #b2738f;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SECTION 1 -->
+<div class="section">
+    <img src="your-childhood.jpg" class="photo">
+    <div class="text">This was me… before I knew you.</div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section">
+    <img src="her-childhood.jpg" class="photo">
+    <div class="text">And this was you… before you knew me.</div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section">
+    <div class="title">Somewhere in between...</div>
+    <div class="life">
+        You were living your own story.  
+        I was chasing mine.  
+        Different places, different moments,  
+        unaware that one day… our timelines would collide.
+    </div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section">
+    <div class="life">
+        You had your quiet days.  
+        I had mine too.  
+        Nights passed, conversations happened,  
+        but never between us—  
+        not yet.
+    </div>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section">
+    <div class="ending">
+        We were living separate lives…  
+        preparing to meet.
+    </div>
+    <br>
+    <div class="text">And then, one day, we did.</div>
+    <br>
+<img src="screenshot.jpg" class="screenshot" alt="Two people wearing glasses smiling at the camera in a warm, golden-lit indoor setting, conveying joy and connection">
+<br>
+<a href="https://keziahbless-ia.github.io/how-kei-meet-kira/" class="btn">click me.</a>
+</div>
+
+<script>
+const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+}, { threshold: 0.3 });
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+</script>
+
+</body>
+</html>
